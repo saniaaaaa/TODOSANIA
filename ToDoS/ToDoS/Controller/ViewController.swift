@@ -26,6 +26,8 @@ class ViewController: UIViewController {
     var idDeleteTodo = ""
     var idEditToDo = ""
     
+    let transition = SlideInTransition()
+    
     var refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
@@ -59,19 +61,27 @@ class ViewController: UIViewController {
     }
     
     @IBAction func openMenu(_ sender: Any) {
-        viewMenu.isHidden = false
-        if menuShowing == false{
-            leadingConstraint.constant = 0
-            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
-                self.view.layoutIfNeeded()
-            }, completion: nil)
-        }else if menuShowing == true{
-            leadingConstraint.constant = -175
-            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
-                self.view.layoutIfNeeded()
-            }, completion: nil)
+//        viewMenu.isHidden = false
+//        if menuShowing == false{
+//            leadingConstraint.constant = 0
+//            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
+//                self.view.layoutIfNeeded()
+//            }, completion: nil)
+//        }else if menuShowing == true{
+//            leadingConstraint.constant = -175
+//            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
+//                self.view.layoutIfNeeded()
+//            }, completion: nil)
+//        }
+//        menuShowing = !menuShowing
+        
+        guard let menuTableViewController = storyboard?.instantiateViewController(withIdentifier: "MenuTableViewController") as? MenuTableViewController else { return }
+        menuTableViewController.didTapMenuType = { menuType in
+            self.transitionToNewContent(menuType)
         }
-        menuShowing = !menuShowing
+        menuTableViewController.modalPresentationStyle = .overCurrentContext
+        menuTableViewController.transitioningDelegate = self
+        present(menuTableViewController, animated: true)
     }
     
     
@@ -238,3 +248,25 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
 }
 
 
+extension ViewController: UIViewControllerTransitioningDelegate{
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = true
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = false
+        return transition
+    }
+    
+    func transitionToNewContent(_ menuType : MenuType){
+        switch menuType {
+        case .newTodo:
+            performSegue(withIdentifier: "toNewTodos", sender: self)
+        case .todo:
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
+}
