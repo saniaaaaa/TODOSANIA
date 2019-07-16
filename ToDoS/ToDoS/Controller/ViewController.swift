@@ -107,22 +107,17 @@ class ViewController: UIViewController {
         }
     }
     
-    func deleteTodo(){
+    func deleteTodo(id: String){
 
-        let urlDelete = "https://todo-backend-restify-redux.herokuapp.com/rkxxoQvyr"
-        let header = ["Content-Type" : "Application/json"]
-        let param : Parameters = ["id" : idDeleteTodo]
+        let urlDelete = "https://todo-backend-restify-redux.herokuapp.com/\(id)"
         
-        Alamofire.request(urlDelete, method: .delete, parameters: param, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+        Alamofire.request(urlDelete, method: .delete).responseData { (response) in
             if response.result.isSuccess{
-                let responseJSON = JSON(response.result.value!)
-                print(responseJSON)
+                print("success")
             }else{
-                let error: NSError = response.result.error! as NSError
-                print(error)
-                let errorJSON = JSON(response.result.error!)
-                print(errorJSON)
+                print("error")
             }
+
         }
     }
     
@@ -183,7 +178,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
                 self.idDeleteTodo = self.notesJSON[indexPath.row]["id"].stringValue
                 print(self.self.idxSelected)
                 print("delete")
-                self.deleteTodo()
+                self.deleteTodo(id: self.idDeleteTodo)
                 self.todoTableView.reloadData()
             }))
             
