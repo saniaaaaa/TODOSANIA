@@ -121,12 +121,33 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateTodo(){
-        let urlUpdate = "https://todo-backend-restify-redux.herokuapp.com/rkxxoQvyr"
-        let header = ["Content-Type" : "Application/json"]
-        let param : Parameters = ["id": idEditToDo ]
+//    func updateTodo(){
+//        let urlUpdate = "https://todo-backend-restify-redux.herokuapp.com/rkxxoQvyr"
+//        let header = ["Content-Type" : "Application/json"]
+//        let param : Parameters = ["id": idEditToDo ]
+//
+//        Alamofire.request(urlUpdate, method: .patch, parameters: param, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+//            if response.result.isSuccess{
+//                let responseJSON = JSON(response.result.value!)
+//
+//                self.editJSON = responseJSON
+//                self.idEditToDo = responseJSON["id"].stringValue
+//                print(responseJSON)
+//                self.performSegue(withIdentifier: "toEdit", sender: self)
+//            }else{
+//                let error: NSError = response.result.error! as NSError
+//                print(error)
+//                let errorJSON = JSON(response.result.error!)
+//                print(errorJSON)
+//            }
+//        }
+//
+//    }
+    
+    func updateTodo(id: String){
+        let urlUpdate = "https://todo-backend-restify-redux.herokuapp.com/\(id)"
         
-        Alamofire.request(urlUpdate, method: .patch, parameters: param, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+        Alamofire.request(urlUpdate, method: .patch).responseData { (response) in
             if response.result.isSuccess{
                 let responseJSON = JSON(response.result.value!)
                 
@@ -140,6 +161,7 @@ class ViewController: UIViewController {
                 let errorJSON = JSON(response.result.error!)
                 print(errorJSON)
             }
+
         }
         
     }
@@ -190,7 +212,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, index) in
             self.idEditToDo = self.notesJSON[indexPath.row]["id"].stringValue
             self.idxSelected = indexPath.row
-            self.updateTodo()
+            self.updateTodo(id: self.idEditToDo)
         }
         
         edit.backgroundColor = .lightGray
