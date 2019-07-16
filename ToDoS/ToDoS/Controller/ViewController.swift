@@ -224,7 +224,8 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEdit"{
             let vc = segue.destination as! NewTodosViewController
-
+            
+            vc.idUpdate = idEditToDo
             for i in 0...notesJSON.count - 1{
                 if notesJSON[i]["id"].stringValue == idEditToDo{
                     vc.titleTodos = notesJSON[i]["title"].stringValue

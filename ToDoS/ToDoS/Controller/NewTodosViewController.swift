@@ -19,6 +19,7 @@ class NewTodosViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descTextField: UITextField!
     
+    var idUpdate = ""
     var titleTodos = ""
     var descTodos = ""
     
@@ -43,7 +44,12 @@ class NewTodosViewController: UIViewController {
     
     
     @IBAction func saveClicked(_ sender: Any) {
-        saveRequest()
+        if idUpdate == ""{
+            saveRequest()
+        }else{
+            updateRequest(id: idUpdate)
+        }
+        
     }
     
     @IBAction func cancelClicked(_ sender: Any) {
@@ -68,6 +74,25 @@ class NewTodosViewController: UIViewController {
                 print("error")
             }
         }
+    }
+    
+    func updateRequest(id: String){
+        let urlUpdate = "https://todo-backend-restify-redux.herokuapp.com/\(id)"
+        let header = ["Content-Type" : "Application/json"]
+        let param : Parameters = [
+            "title" : titleTextField.text!,
+            "order" : descTextField.text!]
+        
+        Alamofire.request(urlUpdate, method: .patch, parameters: param, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            if response.result.isSuccess{
+                let responseJSON = JSON(response.result.value!)
+                print(responseJSON)
+                self.dismiss(animated: true, completion: nil)
+            }else{
+                print("error")
+            }
+        }
+        
     }
 }
 
