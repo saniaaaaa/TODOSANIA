@@ -17,6 +17,10 @@
 		E34632B322DD752300E91698 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34632B122DD752300E91698 /* LaunchScreen.storyboard */; };
 		E34632BE22DD752400E91698 /* ToDoSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34632BD22DD752400E91698 /* ToDoSTests.swift */; };
 		E34632C922DD752400E91698 /* ToDoSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34632C822DD752400E91698 /* ToDoSUITests.swift */; };
+		E34632D822DD7A2400E91698 /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34632D622DD7A2400E91698 /* NotesTableViewCell.swift */; };
+		E34632D922DD7A2400E91698 /* NotesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34632D722DD7A2400E91698 /* NotesTableViewCell.xib */; };
+		E34632DB22DD7C5800E91698 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34632DA22DD7C5800E91698 /* Notes.swift */; };
+		E34632DD22DD9C7D00E91698 /* NewTodosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34632DC22DD9C7D00E91698 /* NewTodosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		E34632C422DD752400E91698 /* ToDoSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34632C822DD752400E91698 /* ToDoSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoSUITests.swift; sourceTree = "<group>"; };
 		E34632CA22DD752400E91698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E34632D622DD7A2400E91698 /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
+		E34632D722DD7A2400E91698 /* NotesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesTableViewCell.xib; sourceTree = "<group>"; };
+		E34632DA22DD7C5800E91698 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		E34632DC22DD9C7D00E91698 /* NewTodosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +107,6 @@
 				A142AF3E8764D8C11F5753D0 /* Pods-ToDoSUITests.debug.xcconfig */,
 				094BCE6382E3DC893910CFB4 /* Pods-ToDoSUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -139,8 +146,9 @@
 			isa = PBXGroup;
 			children = (
 				E34632A822DD752000E91698 /* AppDelegate.swift */,
-				E34632AA22DD752000E91698 /* ViewController.swift */,
-				E34632AC22DD752000E91698 /* Main.storyboard */,
+				E34632E122DDB9D700E91698 /* Model */,
+				E34632DF22DDB99B00E91698 /* View */,
+				E34632DE22DDB98600E91698 /* Controller */,
 				E34632AF22DD752300E91698 /* Assets.xcassets */,
 				E34632B122DD752300E91698 /* LaunchScreen.storyboard */,
 				E34632B422DD752300E91698 /* Info.plist */,
@@ -164,6 +172,41 @@
 				E34632CA22DD752400E91698 /* Info.plist */,
 			);
 			path = ToDoSUITests;
+			sourceTree = "<group>";
+		};
+		E34632DE22DDB98600E91698 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E34632AA22DD752000E91698 /* ViewController.swift */,
+				E34632DC22DD9C7D00E91698 /* NewTodosViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E34632DF22DDB99B00E91698 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E34632AC22DD752000E91698 /* Main.storyboard */,
+				E34632E022DDB9C800E91698 /* View Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E34632E022DDB9C800E91698 /* View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E34632D622DD7A2400E91698 /* NotesTableViewCell.swift */,
+				E34632D722DD7A2400E91698 /* NotesTableViewCell.xib */,
+			);
+			path = "View Cell";
+			sourceTree = "<group>";
+		};
+		E34632E122DDB9D700E91698 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E34632DA22DD7C5800E91698 /* Notes.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +320,7 @@
 				E34632B322DD752300E91698 /* LaunchScreen.storyboard in Resources */,
 				E34632B022DD752300E91698 /* Assets.xcassets in Resources */,
 				E34632AE22DD752000E91698 /* Main.storyboard in Resources */,
+				E34632D922DD7A2400E91698 /* NotesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,12 +395,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ToDoS/Pods-ToDoS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -394,6 +440,9 @@
 			files = (
 				E34632AB22DD752000E91698 /* ViewController.swift in Sources */,
 				E34632A922DD752000E91698 /* AppDelegate.swift in Sources */,
+				E34632D822DD7A2400E91698 /* NotesTableViewCell.swift in Sources */,
+				E34632DD22DD9C7D00E91698 /* NewTodosViewController.swift in Sources */,
+				E34632DB22DD7C5800E91698 /* Notes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
