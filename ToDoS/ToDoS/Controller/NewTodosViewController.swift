@@ -75,7 +75,7 @@ class NewTodosViewController: UIViewController {
                 self.present(alert,animated: true)
 
             }else{
-                let alert = UIAlertController(title: "Gagal", message: "ToDo gagal disave, mohon coba lagi", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Gagal", message: "ToDo gagal disimpan, mohon coba lagi", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                     self.dismiss(animated: true, completion: nil)
                 }))

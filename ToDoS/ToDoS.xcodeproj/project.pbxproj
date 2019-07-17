@@ -69,7 +69,7 @@
 		E34632D722DD7A2400E91698 /* NotesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesTableViewCell.xib; sourceTree = "<group>"; };
 		E34632DC22DD9C7D00E91698 /* NewTodosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodosViewController.swift; sourceTree = "<group>"; };
 		E34632E222DE077400E91698 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = ToDoS/Controller/MenuTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		E34632E422DE0C6700E91698 /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SlideInTransition.swift; path = ToDoS/Model/SlideInTransition.swift; sourceTree = SOURCE_ROOT; };
+		E34632E422DE0C6700E91698 /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SlideInTransition.swift; path = ToDoS/Controller/SlideInTransition.swift; sourceTree = SOURCE_ROOT; };
 		E34632E622DE109E00E91698 /* MenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +184,7 @@
 				E34632AA22DD752000E91698 /* ViewController.swift */,
 				E34632DC22DD9C7D00E91698 /* NewTodosViewController.swift */,
 				E34632E222DE077400E91698 /* MenuTableViewController.swift */,
+				E34632E422DE0C6700E91698 /* SlideInTransition.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -210,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				E34632E622DE109E00E91698 /* MenuType.swift */,
-				E34632E422DE0C6700E91698 /* SlideInTransition.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
