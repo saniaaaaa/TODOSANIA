@@ -39,7 +39,6 @@ class NewTodosViewController: UIViewController {
         descTextField.delegate = self
         
         self.hideKeyboardWhenTappedAround()
-
     }
     
     
@@ -49,7 +48,6 @@ class NewTodosViewController: UIViewController {
         }else{
             updateRequest(id: idUpdate)
         }
-        
     }
     
     @IBAction func cancelClicked(_ sender: Any) {
@@ -69,9 +67,19 @@ class NewTodosViewController: UIViewController {
             if response.result.isSuccess{
                 let responseJSON = JSON(response.result.value!)
                 print(responseJSON)
-                self.dismiss(animated: true, completion: nil)
+                
+                let alert = UIAlertController(title: "Berhasil", message: "ToDo berhasil disimpan, mohon untuk refresh table terlebih dahulu", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alert,animated: true)
+
             }else{
-                print("error")
+                let alert = UIAlertController(title: "Gagal", message: "ToDo gagal disave, mohon coba lagi", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alert,animated: true)
             }
         }
     }
@@ -87,9 +95,19 @@ class NewTodosViewController: UIViewController {
             if response.result.isSuccess{
                 let responseJSON = JSON(response.result.value!)
                 print(responseJSON)
-                self.dismiss(animated: true, completion: nil)
+                
+                let alert = UIAlertController(title: "Berhasil", message: "ToDo berhasil diupdate, mohon untuk refresh table terlebih dahulu", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alert,animated: true)
+                
             }else{
-                print("error")
+                let alert = UIAlertController(title: "Gagal", message: "ToDo gagal diupdate, mohon coba lagi", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alert,animated: true)
             }
         }
         

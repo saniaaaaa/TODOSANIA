@@ -151,8 +151,8 @@
                                                         <constraint firstAttribute="width" constant="40" id="MST-zc-yHn"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5d-5k-tOq">
-                                                    <rect key="frame" x="80" y="31" width="46" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ToDo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5d-5k-tOq">
+                                                    <rect key="frame" x="80" y="31" width="40" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="ACw-af-WIB"/>
                                                     </constraints>

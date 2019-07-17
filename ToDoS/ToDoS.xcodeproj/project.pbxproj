@@ -19,7 +19,6 @@
 		E34632C922DD752400E91698 /* ToDoSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34632C822DD752400E91698 /* ToDoSUITests.swift */; };
 		E34632D822DD7A2400E91698 /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34632D622DD7A2400E91698 /* NotesTableViewCell.swift */; };
 		E34632D922DD7A2400E91698 /* NotesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34632D722DD7A2400E91698 /* NotesTableViewCell.xib */; };
-		E34632DB22DD7C5800E91698 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34632DA22DD7C5800E91698 /* Notes.swift */; };
 		E34632DD22DD9C7D00E91698 /* NewTodosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34632DC22DD9C7D00E91698 /* NewTodosViewController.swift */; };
 		E34632E322DE077400E91698 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34632E222DE077400E91698 /* MenuTableViewController.swift */; };
 		E34632E522DE0C6700E91698 /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34632E422DE0C6700E91698 /* SlideInTransition.swift */; };
@@ -68,7 +67,6 @@
 		E34632CA22DD752400E91698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E34632D622DD7A2400E91698 /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
 		E34632D722DD7A2400E91698 /* NotesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesTableViewCell.xib; sourceTree = "<group>"; };
-		E34632DA22DD7C5800E91698 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		E34632DC22DD9C7D00E91698 /* NewTodosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodosViewController.swift; sourceTree = "<group>"; };
 		E34632E222DE077400E91698 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = ToDoS/Controller/MenuTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		E34632E422DE0C6700E91698 /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SlideInTransition.swift; path = ToDoS/Model/SlideInTransition.swift; sourceTree = SOURCE_ROOT; };
@@ -211,7 +209,6 @@
 		E34632E122DDB9D700E91698 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E34632DA22DD7C5800E91698 /* Notes.swift */,
 				E34632E622DE109E00E91698 /* MenuType.swift */,
 				E34632E422DE0C6700E91698 /* SlideInTransition.swift */,
 			);
@@ -454,7 +451,6 @@
 				E34632D822DD7A2400E91698 /* NotesTableViewCell.swift in Sources */,
 				E34632E522DE0C6700E91698 /* SlideInTransition.swift in Sources */,
 				E34632DD22DD9C7D00E91698 /* NewTodosViewController.swift in Sources */,
-				E34632DB22DD7C5800E91698 /* Notes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
